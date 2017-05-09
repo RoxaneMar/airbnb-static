@@ -1,0 +1,40 @@
+.header-flat-details {
+  display: flex;
+  align-item: center;
+
+
+  .wrap {
+    padding: 5px;
+
+  }
+
+}
+ .header-flat-howner {
+  padding: 5px;
+
+  }
+
+
+.show-wrapper {
+  margin: 50px 0;
+}
+
+ p {
+      color: $gray;
+    }
+
+.full {
+  color: $yellow;
+}
+
+.empty {
+  color: $grey;
+}
+
+.booker {
+  background-color: $grey;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+

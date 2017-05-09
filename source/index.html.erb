@@ -54,43 +54,26 @@
     </div>
 
     <!-- Your cards code -->
-    <div class="wrapper-grey">
-      <div class="container">
-      <h1 class="text-center">Your next trip</h1>
-        <div class="row">
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
-              <h1 class="city">Paris</h1>
-              <div class="description">
-                <h2>Seb's home</h2>
-                <p>Charming room with patio</p>
-              </div>
-              <%= image_tag "images/seb.jpg", class: "avatar" %>
+  <div class="wrapper-grey">
+    <div class="container">
+    <h1 class="text-center">Your next trip</h1>
+      <div class="row">
+        <% data.flats.each do |owner, flat| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: url('<%= image_path flat.picture %>');">
+            <div class="card-category"><%= flat.city %></div>
+            <div class="card-description">
+              <h2><%= flat.name %></h2>
+              <p><%= flat.summary %></p>
             </div>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-brussels.jpeg');"">
-              <h1 class="city">Brussels</h1>
-              <div class="description">
-                <h2>Anne's home</h2>
-                <p>Lovely house</p>
-              </div>
-              <%= image_tag "images/anne.jpg", class: "avatar" %>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-london.jpeg');">
-              <h1 class="city">London</h1>
-              <div class="description">
-                <h2>Romain's home</h2>
-                <p>Nice flat in Piccadilly</p>
-              </div>
-              <%= image_tag "images/romain.jpeg", class: "avatar" %>
-            </div>
+            <%= image_tag flat.owner_picture, class:"avatar" %>
+            <%= link_to "#", "flats/#{owner}.html", class: "card-link" %>
           </div>
         </div>
+        <% end %>
       </div>
     </div>
+  </div>
 
     <!-- Your newsletter code -->
     <form action="#" class="form-inline text-center">
